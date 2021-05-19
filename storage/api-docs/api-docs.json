@@ -1,0 +1,160 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Transaction Project",
+        "description": "A single transaction system",
+        "contact": {
+            "email": "dev@telesdourado.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/transaction": {
+            "post": {
+                "tags": [
+                    "transactions"
+                ],
+                "summary": "Send Money Between Accounts",
+                "operationId": "App\\Http\\Controllers\\Gateway\\TransactionController::create",
+                "requestBody": {
+                    "description": "Input Data",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "value": {
+                                        "type": "number"
+                                    },
+                                    "payer": {
+                                        "type": "string"
+                                    },
+                                    "payee": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/transaction/{id}/rollback": {
+            "post": {
+                "tags": [
+                    "transactions"
+                ],
+                "summary": "RollBack a transaction",
+                "operationId": "App\\Http\\Controllers\\Gateway\\TransactionController::rollback",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Transaction Id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/wallet/{id}": {
+            "get": {
+                "tags": [
+                    "wallets"
+                ],
+                "summary": "Get A User Wallet",
+                "operationId": "App\\Http\\Controllers\\Gateway\\WalletController::show",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "user id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "post": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Create A New User",
+                "operationId": "App\\Http\\Controllers\\Users\\UserController::create",
+                "requestBody": {
+                    "description": "User Input Data",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "full_name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "cpf": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "user_type_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        },
+        "/api/user-types": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Get All User Types",
+                "operationId": "App\\Http\\Controllers\\Users\\UserTypeController::show",
+                "responses": {
+                    "200": {
+                        "description": "sucess"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
