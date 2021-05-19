@@ -3,8 +3,7 @@ services:
   app:
     build: .
     depends_on:
-      db:
-        condition: service_healthy
+      - db
     container_name: transaction-app
     links:
       - db
