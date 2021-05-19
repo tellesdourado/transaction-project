@@ -10,6 +10,7 @@ use App\Http\Controllers\Users\UserTypeController;
 Route::group(
     ["prefix" => "/users"],
     function () {
+        Route::get('/', [UserController::class, 'show']);
         Route::post('/', [UserController::class, 'create']);
     }
 );

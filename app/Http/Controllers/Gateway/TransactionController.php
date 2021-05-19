@@ -27,7 +27,7 @@ class TransactionController extends Controller
     /**
      * @OA\Post(
      *     path="/api/transaction",
-     *     tags={"transactions"},
+     *     tags={"Transaction"},
      *     summary="Send Money Between Accounts",
      *     @OA\Response(
      *         response=200,
@@ -74,7 +74,7 @@ class TransactionController extends Controller
     /**
      * @OA\Post(
      *     path="/api/transaction/{id}/rollback",
-     *     tags={"transactions"},
+     *     tags={"Transaction"},
      *     summary="RollBack a Transaction",
      *     @OA\Parameter(
      *         name="id",

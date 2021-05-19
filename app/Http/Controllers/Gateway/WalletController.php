@@ -19,7 +19,7 @@ class WalletController extends Controller
     /**
      * @OA\Get(
      *     path="/api/wallet/{id}",
-     *     tags={"wallets"},
+     *     tags={"Wallet"},
      *     summary="Get A User Wallet",
      *     @OA\Response(
      *         response=200,

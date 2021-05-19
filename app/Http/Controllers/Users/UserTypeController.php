@@ -19,7 +19,7 @@ class UserTypeController extends Controller
     /**
      * @OA\Get(
      *     path="/api/user-types",
-     *     tags={"users"},
+     *     tags={"User"},
      *     summary="Get All User Types",
      *     @OA\Response(
      *         response=200,
