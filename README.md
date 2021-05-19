@@ -18,7 +18,7 @@
 http://localhost:8000/api/documentation
 
 
-![](https://i.imgur.com/IB6nFvV.png)
+![](https://i.imgur.com/nN1e330.png)
 
 
 ## Entity–relationship Model
