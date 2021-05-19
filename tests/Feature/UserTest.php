@@ -191,4 +191,10 @@ class UserTest extends TestCase
                 ]
             );
     }
+
+    public function testShowAllUsers()
+    {
+        $this->get('/api/users')
+            ->assertStatus(200);
+    }
 }
