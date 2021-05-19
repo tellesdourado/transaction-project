@@ -17,6 +17,9 @@
 
 http://localhost:8000/api/documentation
 
+or you can import the insomnia workspace:
+
+[Insomnia](storage/Insomnia.json)
 
 ![](https://i.imgur.com/nN1e330.png)
 
